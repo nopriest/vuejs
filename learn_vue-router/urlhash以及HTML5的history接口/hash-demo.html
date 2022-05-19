@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <a href="#/home">Home</a>
+        <a href="#/about">About</a>
+        <div class="content">内容</div>
+    </div>
+</body>
+<script>
+    const contentEl = document.querySelector('.content');
+    //监听浏览器哈希值改变
+    window.addEventListener('hashchange', (e)=>{
+        console.log(e, 'hash changed!')
+        switch(location.hash){
+            case '#/home':contentEl.innerHTML = 'Home Page'; break;
+            case '#/about':contentEl.innerHTML = 'About Page';break;
+            default: contentEl.innerHTML = 'Default Page';
+        }
+    })
+</script>
+</html>
